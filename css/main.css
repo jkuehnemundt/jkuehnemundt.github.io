@@ -2,13 +2,13 @@
 
 @media only screen and (max-device-width: 850px) {
     .ascii {
-        font-size: 4px !important;
+        font-size: 0.3em !important;
     }
 }
 
 @media only screen and (max-width: 850px) {
     .ascii {
-        font-size: 5px !important;
+        font-size: 0.4em !important;
     }
 }
 
