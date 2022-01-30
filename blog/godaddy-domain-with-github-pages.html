@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/bootstrap-3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="/js/lightbox.js"></script>
+<link rel="stylesheet" href="/css/lightbox.css">
 </head>
 
 
@@ -104,13 +106,22 @@ On the DNS management page choose your domain and add the following changes:</p>
 
 <p>Finally it should look like the following screenshot:</p>
 
-<p><img src="../../assets/records.jpg" alt="image-title-here" class="img-responsive" /></p>
+<div class="imgwrapper">
+<a href="../../assets/records.jpg" data-lightbox="image" caption="">
+    <img class="image" src="../../assets/records.jpg" width="700" />
+</a>
+</div>
 
 <p>Now go to the GitHub repository and make the following changes under Settings -&gt; Pages.
 Under ‘Custom Domain’ add your domain and check <code class="language-plaintext highlighter-rouge">Enforce HTTPS</code>.
 This creates a CNAME file in your repository which contains the domain.</p>
 
-<p><img src="../../assets/github_page_settings.jpg" alt="image-title-here" class="img-responsive" /></p>
+<div class="imgwrapper">
+<a href="../../assets/github_page_settings.jpg" data-lightbox="image" caption="">
+    <img class="image" src="../../assets/github_page_settings.jpg" width="700" />
+</a>
+</div>
+
 
   </article>
 
@@ -152,7 +163,6 @@ This creates a CNAME file in your repository which contains the domain.</p>
     </footer>
   </div>
 </div>
-
 
       </div>
     </body>

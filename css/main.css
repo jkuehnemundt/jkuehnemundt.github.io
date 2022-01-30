@@ -2,13 +2,13 @@
 
 @media only screen and (max-device-width: 850px) {
     .ascii {
-        font-size: 0.3em !important;
+        font-size: 4px !important;
     }
 }
 
 @media only screen and (max-width: 850px) {
     .ascii {
-        font-size: 0.4em !important;
+        font-size: 4px !important;
     }
 }
 
@@ -46,7 +46,6 @@ h6 { color: rgba(255,255,255,0.6); }
 footer {
     color: rgba(255,255,255,0.8);
     font-weight: bold;
-    //width: 60%;
     border-top: dashed 1px rgba(255,255,255,0.5);
     margin: 20px auto 15px;
     padding-top: 10px;
@@ -59,7 +58,6 @@ header {
 header p {
     text-align: left;
     margin: 0;
-    /* color: rgba(220,220,0,0.7); */
     color: rgba(255,255,255,1);
 }
 a {
@@ -108,15 +106,6 @@ pre {
 		font-size: 12px;
 		color: rgba(255,255,255,0.4);
 }
-img {
-    width: 80%;
-    margin-left: 10%;
-    border: 1px dashed rgba(255,255,255,0.5);
-    padding: 8px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
 iframe {
     width: 750px;
     height: 400px;
@@ -134,6 +123,16 @@ iframe {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.imgwrapper {
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.imgwrapper img {
+    margin: auto;
+    display: block;
+}
+
 
 /* Table style */
 audio {
