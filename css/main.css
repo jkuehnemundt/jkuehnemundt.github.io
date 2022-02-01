@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #0c0d10;
+    background-color: #2d2d2d;
     margin: 0 auto;
     padding: 0;
     font-family: 'Source Code Pro', monospace;
@@ -28,7 +28,7 @@ body {
     margin: 0;
     font-size: 8px;
     line-height: 0.9;
-    background: #0c0d10;
+    background: #2d2d2d;
     margin-bottom: 20px;
     overflow: visible;
 }
@@ -94,13 +94,13 @@ main {
 a:hover {
 		color: #d14;
 }
+.lineno {
+    width: auto;
+}
 pre {
-    background-color: rgba(255,255,255,0.05);
-    border: 1px dashed rgba(255,255,255,0.5);
+    background-color: #000000;
     padding: 8px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    border: 0;
     overflow:auto;
 		font-family: monospace;
 		font-size: 12px;
@@ -144,11 +144,10 @@ audio {
 table {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
 }
 
 td {
-    border: 1px dashed rgba(255, 255, 255, 0.5);
+    /* border: 0px dashed rgba(255, 255, 255, 0.5); */
 }
 
 caption {
@@ -162,7 +161,9 @@ table a {
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
-
+pre.highlight {
+    color: #000000;
+}
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
@@ -179,7 +180,7 @@ table a {
 .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
 .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
 .highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gp { color: #d14 } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
 .highlight .gt { color: #aa0000 } /* Generic.Traceback */
@@ -198,7 +199,7 @@ table a {
 .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
 .highlight .nn { color: #555555 } /* Name.Namespace */
-.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nt { color:  lightcoral} /* Name.Tag */
 .highlight .nv { color: #008080 } /* Name.Variable */
 .highlight .ow { font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
@@ -241,8 +242,8 @@ table a {
 }
 
 blockquote {
-  border-left: unset;
-margin: unset;
+    border-left: unset;
+    margin: unset;
     font-size: 12px;
 }
 

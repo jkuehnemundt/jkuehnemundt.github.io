@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>$ cat 404.txt | kuehnemundt</title>
+    <title>GoDaddy Domain with GitHub Pages | kuehnemundt</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap-3.3.6/css/bootstrap.min.css">
@@ -75,8 +75,96 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <main>
-            <h1 id="-cat-404txt">$ cat 404.txt</h1>
-<p>404.txt: No such file or directory</p>
+            <div class="post">
+
+  <header class="post-header">
+    <h1>$ cat GoDaddy Domain with GitHub Pages.txt</h1>
+  </header>
+
+  <article class="post-content">
+  <div class="post">
+
+  <header class="post-header">
+    <p class="meta">
+        Aug 14, 2021
+        
+        
+        •
+        <span>[
+          
+            
+            <a href="/tag/godaddy"><code class="highligher-rouge"><nobr>godaddy</nobr></code></a>
+          
+            
+            <a href="/tag/domain"><code class="highligher-rouge"><nobr>domain</nobr></code></a>
+          
+        ]</span>
+    </p>
+  </header>
+
+  <article class="post-content">
+  <p>Here is a quick way to point a domain from GoDaddy to GitHub Pages.<br />
+At first go the GoDaddy website and choose the DNS-Management page.
+On the DNS management page choose your domain and add the following changes:</p>
+
+<ul>
+  <li>Add a new CNAME row with the name ‘www’ and your GitHub website name as value (username.github.io)</li>
+  <li>Edit the ‘A’ row to the following IP address ‘185.199.108.153’</li>
+  <li>Add the following “A”-Type rows:
+    <ul>
+      <li>185.199.109.153</li>
+      <li>185.199.110.153</li>
+      <li>185.199.111.153</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Finally it should look like the following screenshot:</p>
+
+<div class="imgwrapper">
+<a href="../../assets/godaddy-domain-with-github-pages/records.jpg" data-lightbox="image" caption="">
+    <img class="image" src="../../assets/godaddy-domain-with-github-pages/records.jpg" width="700" />
+</a>
+</div>
+
+<p>Now go to the GitHub repository and make the following changes under Settings -&gt; Pages.
+Under ‘Custom Domain’ add your domain and check <code class="language-plaintext highlighter-rouge">Enforce HTTPS</code>.
+This creates a CNAME file in your repository which contains the domain.</p>
+
+<div class="imgwrapper">
+<a href="../../assets/godaddy-domain-with-github-pages/github_page_settings.jpg" data-lightbox="image" caption="">
+    <img class="image" src="../../assets/godaddy-domain-with-github-pages/github_page_settings.jpg" width="700" />
+</a>
+</div>
+
+
+  </article>
+
+<!--<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = '';
+    var disqus_config = function () {
+        this.page.identifier = "/blog/godaddy-domain-with-github-pages/godaddy-domain-with-github-pages.html";
+    };
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+-->
+
+</div>
+
+  </article>
+
+</div>
 
             </main>
           </div>
