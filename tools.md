@@ -19,4 +19,4 @@ On this page, I share some of the tools and technologies I use in my daily work 
 
 💻 __System & Setup__:
 - __<a href="https://apps.microsoft.com/detail/9n0dx20hk701?hl=de-DE&gl=DE" target="_blank" rel="noopener noreferrer">Windows Terminal</a>__ - _is a modern, customizable terminal — especially powerful when paired with Oh My Posh. On macOS, __<a href="https://www.iterm2.com/" target="_blank" rel="noopener noreferrer">iTerm2</a>__ is my go-to alternative._
-- __<a href="https://ditto-cp.sourceforge.io/" target="_blank" rel="noopener noreferrer">Ditto</a>__ - A clipboard manager for Windows, and for Mac, I recommend __<a href="https://getpasty.app/" target="_blank" rel="noopener noreferrer">Pasty</a>__. 
+- __<a href="https://ditto-cp.sourceforge.io/" target="_blank" rel="noopener noreferrer">Ditto</a>__ - _A clipboard manager for Windows, and for Mac, I recommend_ __<a href="https://getpasty.app/" target="_blank" rel="noopener noreferrer">Pasty</a>__. 
