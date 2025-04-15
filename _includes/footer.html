@@ -1,21 +1,11 @@
 <footer class="footer">
-  <a class="footer_item" href="/thanks">ack.</a>
-  <a class="footer_item" href="javascript::void(0)">resume</a>
-  <a class="footer_item" href="/feed.xml">rss</a>
-  <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
-  <small class="footer_copyright">
-    <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
-    <a
-      href="https://github.com/piharpi/jekyll-klise"
-      target="_blank"
-      rel="noreferrer noopener"
-      >klisé</a
-    >
-    theme on
-    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener"
-      >jekyll</a
-    >
-  </small>
+  <div class="social">
+    <a href="https://linkedin.com/in/kuehnemundt" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/jkuehnemundt" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="mailto:jkuehnemundt@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></i></a>
+    <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
+  </div>
+  <div style="font-size: 12px">Theme created by <a href="https://klise.vercel.app/" target="_blank">klise</a> and customized by me.</div>
 </footer>
 <script src="/assets/js/main.js" defer="defer"></script>
 {%- if site.google_analytics -%}

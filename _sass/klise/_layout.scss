@@ -11,6 +11,24 @@
   @extend %clearfix;
 }
 
+.social {
+  a:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+}
+
+.logo_name {
+  float: left;
+  letter-spacing: -1.3px;
+  line-height: 2.25;
+  font-size: 19px;
+}
+
+a {
+  text-decoration: none;
+}
+
 // Navigation
 .menu {
   user-select: none;
@@ -72,6 +90,10 @@
     display: none;
   }
 
+  .day-night {
+    float: right;
+  }
+
   .menu-link {
     color: $black;
     line-height: $base-line-height + 0.4;
@@ -118,6 +140,18 @@
     a#mode {
       left: 10px;
       top: 12px;
+    }
+
+    .logo_name {
+      margin: 7px;
+    }    
+
+    .day-night {
+      position: relative;
+      text-align: center;
+      float: none;
+      margin: 0 auto;
+      width: 48px;
     }
 
     .menu-icon {
@@ -190,8 +224,8 @@
   }
 
   .author-avatar {
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     user-select: none;
     background-color: $black;

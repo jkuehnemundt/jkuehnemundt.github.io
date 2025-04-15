@@ -1,6 +1,6 @@
 // Fonts preferences
-$sans-family: Roboto, sans-serif;
-$mono-family: Consolas, monospace;
+$sans-family: DMSans, sans-serif;
+$mono-family: DMSans, monospace;
 $base-font-size: 16px;
 $medium-font-size: $base-font-size * 0.938;
 $small-font-size: $base-font-size * 0.875;
@@ -14,8 +14,8 @@ $bold-weight: 700;
 
 //Light Colors
 $text-base-color: #434648;
-$text-link-blue: #003fff;
-$text-link-blue-active: #0036c7;
+$text-link-blue: #0d122b;
+$text-link-blue-active: #0d122b;
 
 $black: #0d122b;
 $light: #ececec;
@@ -60,4 +60,4 @@ $on-widescreen: 1152px;
 
 // Import sass files
 @import "klise/fonts", "klise/base", "klise/layout", "klise/post",
-  "klise/miscellaneous", "klise/syntax", "klise/dark";
+  "klise/miscellaneous", "klise/syntax", "klise/dark", "external/font-awesome";
