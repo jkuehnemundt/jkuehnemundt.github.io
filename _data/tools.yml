@@ -1,0 +1,53 @@
+# os: windows, macos or both
+- group: Development
+  items:
+    - name: JetBrains Rider
+      url: https://www.jetbrains.com/rider/
+      desc: My IDE for everything .NET.
+      os: both
+
+- group: Productivity & workflow
+  items:
+    - name: Obsidian
+      url: https://obsidian.md/
+      desc: Note-taking. Every note on this site starts here.
+      os: both
+    - name: Snipaste
+      url: https://www.snipaste.com/
+      desc: Screenshots with quick annotations.
+      os: windows
+    - name: Shottr
+      url: https://shottr.cc/
+      desc: Screenshots on the Mac, my Snipaste replacement.
+      os: macos
+    - name: Listary
+      url: https://www.listary.com/
+      desc: Keyboard-driven launcher and file search.
+      os: windows
+    - name: Alfred
+      url: https://www.alfredapp.com/
+      desc: Launcher on the Mac, my Listary replacement.
+      os: macos
+    - name: RegionToShare
+      url: https://github.com/tom-englert/RegionToShare
+      desc: Shares a single screen region. Great for pair programming and reviews.
+      os: windows
+
+- group: System & setup
+  items:
+    - name: Windows Terminal
+      url: https://apps.microsoft.com/detail/9n0dx20hk701
+      desc: My terminal, paired with Oh My Posh.
+      os: windows
+    - name: iTerm2
+      url: https://iterm2.com/
+      desc: My terminal on the Mac.
+      os: macos
+    - name: Ditto
+      url: https://ditto-cp.sourceforge.io/
+      desc: Clipboard history.
+      os: windows
+    - name: Pasty
+      url: https://getpasty.app/
+      desc: Clipboard history on the Mac.
+      os: macos

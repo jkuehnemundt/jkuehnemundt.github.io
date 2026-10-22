@@ -1,0 +1,7 @@
+# Planned note titles, shown as "Coming soon" on the home page.
+# While this list is empty, the single line `up_next` from _config.yml is shown instead.
+# Example:
+# - title: Building my first MCP server
+#   text: What worked, what didn't, and what I'd do differently.
+#   status: drafting
+[]

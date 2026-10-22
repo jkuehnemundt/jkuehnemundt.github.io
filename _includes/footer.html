@@ -1,36 +1,12 @@
-<footer class="footer">
-  <div class="social">
-    <a href="https://linkedin.com/in/kuehnemundt" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://github.com/jkuehnemundt" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="mailto:jkuehnemundt@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></i></a>
-    <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
-  </div>
-  <div style="font-size: 12px">Theme created by <a href="https://klise.vercel.app/" target="_blank">klise</a> and customized by me.</div>
+<footer class="site-footer">
+  <nav class="social" aria-label="Elsewhere">
+    <a class="social__link" href="{{ site.data.social.github }}" aria-label="GitHub"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10M18 10c0 4-6 3-12 7"/></svg><span class="social__label" aria-hidden="true">GitHub</span></a>
+    <a class="social__link" href="{{ site.data.social.linkedin }}" aria-label="LinkedIn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span class="social__label" aria-hidden="true">LinkedIn</span></a>
+    <a class="social__link" href="mailto:{{ site.data.social.email }}" aria-label="Email"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="social__label" aria-hidden="true">Email</span></a>
+  </nav>
+  <span class="site-footer__legal">
+    <span>© {{ site.time | date: "%Y" }}</span>
+    <a href="{{ '/legalnotice/' | relative_url }}">Legal notice</a>
+    <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+  </span>
 </footer>
-<script src="/assets/js/main.js" defer="defer"></script>
-{%- if site.google_analytics -%}
-  <!-- Google tag (gtag.js) -->
-  <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "{{ site.google_analytics }}");
-  </script>
-{%- endif -%}
-{%- if page.url == '/archive/' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}

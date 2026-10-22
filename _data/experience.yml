@@ -1,0 +1,53 @@
+# Rendered top to bottom as a git graph on the About page.
+# graph:
+#   head   – newest commit on main (filled dot)
+#   main   – normal commit on main
+#   tip    – open side branch, not merged yet (dot on the side lane)
+#   pass   – commit on main while a side branch runs alongside
+#   merge  – commit on main where a side branch joins back in
+#   branch – commit on a side branch
+#   fork   – commit on main where a side branch starts
+# dashed: true draws the side lane dashed (e.g. a paused branch)
+# The line on main ends automatically at the last entry.
+- hash: a1f3c9e
+  refs: HEAD → main
+  graph: head
+  title: Software Engineer · TRIOVEGA GmbH
+  text: Lübeck · hybrid
+  years: Jan 2024 – today
+
+- hash: 5d2e8b4
+  refs: feature/master · paused
+  graph: tip
+  dashed: true
+  title: Master, Computer Science · TH Lübeck
+  text: Software engineering for distributed systems
+  years: 2020 –
+
+- hash: 7c02e4b
+  graph: fork
+  dashed: true
+  title: Software Engineer · cbb Software GmbH
+  text: Lübeck · hybrid
+  years: Apr 2019 – Dec 2023
+
+- hash: e94d1a0
+  refs: merge feature/bachelor
+  graph: merge
+  title: Bachelor of Science, Computer Science · TH Lübeck
+  text: Software engineering
+  years: 2014 – 2018
+
+- hash: 3b7f1c2
+  refs: feature/bachelor
+  graph: branch
+  title: Working Student, Software Development · EWA-Productions GmbH
+  text: Alongside my studies · Bad Schwartau
+  years: Sep 2014 – Mar 2019
+
+- hash: c3e1b77
+  refs: "tag: v1.0"
+  graph: fork
+  title: Apprenticeship, Software Development · EWA-Productions GmbH
+  text: Fachinformatiker für Anwendungsentwicklung (IHK), followed by two months full-time · Bad Schwartau
+  years: Aug 2011 – Aug 2014

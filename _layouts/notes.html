@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<section class="page-intro">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+</section>
+
+{%- assign years = site.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+{%- for year in years %}
+<section class="section" aria-labelledby="y-{{ year.name }}">
+  <h2 class="label" id="y-{{ year.name }}">{{ year.name }}</h2>
+  <ul class="rows">
+    {%- for post in year.items %}
+      {% include note-row.html post=post %}
+    {%- endfor %}
+  </ul>
+</section>
+{%- endfor %}
+<div class="section--last"></div>

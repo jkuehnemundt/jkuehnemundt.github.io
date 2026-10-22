@@ -1,14 +1,89 @@
 ---
 layout: default
-home: true
 ---
+<h1 class="hero" data-typed-headline>
+  <span class="hero__line" data-typed-target>{{ site.tagline }}</span>
+  <span class="hero__sub" data-typed-sub>{{ site.description }}</span>
+</h1>
+{%- if site.author.role %}
+<p class="hero__who"><span>{{ site.author.role }}</span><a href="{{ '/about/' | relative_url }}">About me →</a></p>
+{%- endif %}
 
-<h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-{%- for post in site.posts limit: site.number_of_posts -%}
-<article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-  <h4 class="post-item-title">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
-  </h4>
-</article>
-{%- endfor -%}
+{%- if site.show_notes %}
+<section class="section" aria-labelledby="latest">
+  <h2 class="label" id="latest">Latest notes</h2>
+  <ul class="rows">
+    {%- for post in site.posts limit: 3 -%}
+      {% include note-row.html post=post %}
+    {%- endfor -%}
+  </ul>
+  {%- if site.posts.size > 3 %}
+  <a class="more" href="{{ '/notes/' | relative_url }}">Browse all notes →</a>
+  {%- endif %}
+</section>
+{%- endif %}
+
+{%- if site.data.upcoming.size > 0 %}
+<section class="section" aria-labelledby="soon">
+  <h2 class="label" id="soon">Coming soon</h2>
+  <p class="shelf-hint shelf-hint--tight">What I'm writing about next.</p>
+  <ul class="rows">
+    {%- for item in site.data.upcoming %}
+    <li class="row row--upcoming">
+      <span class="row__main">
+        <span class="row__title">{{ item.title }}</span>
+        {%- if item.text %}<span class="row__text">{{ item.text }}</span>{% endif %}
+      </span>
+      {%- if item.status %}<span class="row__meta row__meta--status">{{ item.status }}</span>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- elsif site.up_next and site.up_next != "" %}
+<section class="section" aria-labelledby="soon">
+  <h2 class="label label--spaced" id="soon">Up next</h2>
+  <p class="up-next">{{ site.up_next }}</p>
+</section>
+{%- endif %}
+
+{%- if site.data.books.size > 0 %}
+<section class="section" aria-labelledby="desk" data-shelf>
+  <h2 class="label" id="desk">On my desk</h2>
+  <p class="shelf-hint">What I'm reading right now. Pick a book for details.</p>
+  <div class="shelf" role="group" aria-label="Books">
+    {%- for book in site.data.books %}
+    <button class="spine" type="button" data-book="{{ forloop.index0 }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="{{ book.title }} by {{ book.author }}"
+            style="--spine: {{ book.color | default: '#7E5F2E' }}; --h: {{ book.height | default: 280 }}px">
+      <span class="spine__title">{{ book.title }}</span>
+      <span class="spine__author">{{ book.author | split: " " | last }}</span>
+    </button>
+    {%- endfor %}
+  </div>
+  {%- for book in site.data.books %}
+  <div class="book-detail" data-book-detail="{{ forloop.index0 }}" aria-live="polite"{% unless forloop.first %} hidden{% endunless %}>
+    <span class="book-detail__title">{{ book.title }}</span>
+    <span class="book-detail__meta">{{ book.author }}{% if book.publisher %} · {{ book.publisher }}{% endif %}</span>
+    {%- if book.subtitle %}<span class="book-detail__text">{{ book.subtitle }}</span>{% endif %}
+    {%- if book.note %}<span class="book-detail__text">{{ book.note }}</span>{% endif %}
+    {%- if book.url %}<a class="more" href="{{ book.url }}">View at the publisher<span class="ext" aria-hidden="true">↗</span></a>{% endif %}
+  </div>
+  {%- endfor %}
+</section>
+{%- endif %}
+
+{%- if site.show_topics %}
+<section class="section section--last" aria-labelledby="topics">
+  <h2 class="label" id="topics">Topics</h2>
+  <div class="inline-links">
+    {%- for topic in site.data.topics -%}
+      {%- assign tagged = site.posts | where_exp: "p", "p.topics contains topic.id" -%}
+      {%- if tagged.size > 0 -%}
+      <a href="{{ '/topics/' | relative_url }}#{{ topic.id }}">{{ topic.name }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- else %}
+<div class="section--last"></div>
+{%- endif %}

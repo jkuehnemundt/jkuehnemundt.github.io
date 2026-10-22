@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section class="page-intro">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+</section>
+
+<nav class="inline-links jump" aria-label="Jump to topic">
+  {%- for topic in site.data.topics -%}
+    {%- assign tagged = site.posts | where_exp: "p", "p.topics contains topic.id" -%}
+    {%- if tagged.size > 0 %}<a href="#{{ topic.id }}">{{ topic.name }}</a>{% endif -%}
+  {%- endfor -%}
+</nav>
+
+{%- for topic in site.data.topics %}
+  {%- assign tagged = site.posts | where_exp: "p", "p.topics contains topic.id" -%}
+  {%- if tagged.size > 0 %}
+<section class="section" id="{{ topic.id }}" aria-labelledby="h-{{ topic.id }}">
+  <h2 class="label" id="h-{{ topic.id }}">{{ topic.name }} <span class="label__count">{{ tagged.size }}</span></h2>
+  <ul class="rows">
+    {%- for post in tagged %}
+      {% include note-row.html post=post compact=true %}
+    {%- endfor %}
+  </ul>
+</section>
+  {%- endif %}
+{%- endfor %}
+<div class="section--last"></div>

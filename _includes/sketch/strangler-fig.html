@@ -1,0 +1,35 @@
+<figure class="sketch">
+  <div class="sketch-box" style="--w:170px;--h:56px">
+    <svg viewBox="0 0 170 56" aria-hidden="true"><path d="M5 6 L166 3 L167 52 L3 54 Z"/><path class="second" d="M2 4 L163 7 L165 50 L6 53 L3 8"/></svg>
+    <span>Client</span>
+  </div>
+
+  <svg class="sketch-arrow" width="30" height="46" viewBox="0 0 30 46" aria-hidden="true"><path d="M15 2 C13 16 17 28 15 42"/><path d="M8 34 L15 43 L22 33"/></svg>
+
+  <div class="sketch-box sketch-box--secondary" style="--w:250px;--h:60px">
+    <svg viewBox="0 0 250 60" aria-hidden="true"><path d="M4 4 L247 6 L245 57 L5 55 Z"/><path class="second" d="M7 7 L243 3 L248 54 L2 57"/></svg>
+    <span>Facade · reverse proxy</span>
+  </div>
+
+  <div class="sketch-split">
+    <div class="sketch-col">
+      <svg class="sketch-arrow sketch-arrow--accent" width="30" height="44" viewBox="0 0 30 44" aria-hidden="true"><path d="M15 2 C17 14 13 26 15 40"/><path d="M8 32 L15 41 L22 31"/></svg>
+      <span class="sketch-label sketch-label--accent">/orders/**</span>
+      <div class="sketch-box sketch-box--accent" style="--w:190px;--h:64px">
+        <svg viewBox="0 0 190 64" aria-hidden="true"><path class="fill" d="M6 6 L186 4 L185 60 L4 61 Z"/><path d="M6 6 L186 4 L185 60 L4 61 Z"/><path class="second" d="M3 9 L183 2 L188 57 L7 63"/></svg>
+        <span>New service</span>
+      </div>
+      <span class="sketch-label">grows ↗</span>
+    </div>
+    <div class="sketch-col">
+      <svg class="sketch-arrow" width="30" height="44" viewBox="0 0 30 44" aria-hidden="true"><path d="M15 2 C13 14 17 26 15 40"/><path d="M8 32 L15 41 L22 31"/></svg>
+      <span class="sketch-label">everything else</span>
+      <div class="sketch-box sketch-box--dashed" style="--w:190px;--h:64px">
+        <svg viewBox="0 0 190 64" aria-hidden="true"><path d="M4 5 L187 7 L184 61 L6 59 Z"/></svg>
+        <span>Legacy system</span>
+      </div>
+      <span class="sketch-label">shrinks ↘</span>
+    </div>
+  </div>
+  <figcaption>Routing decides, per path, which system answers.</figcaption>
+</figure>
