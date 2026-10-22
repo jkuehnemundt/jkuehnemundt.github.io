@@ -14,9 +14,6 @@ show_notes: true
 up_next: "Currently tinkering with AI agents and MCP servers. Notes will follow."
 timezone: Europe/Berlin
 
-twitter:
-  card: summary_large_image
-
 author:
   name: Jannik Kühnemundt
   url: https://www.kuehnemundt.com/about/
