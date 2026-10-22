@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<section class="about-intro">
+  <div class="about-intro__text">
+    <h1 class="page-title">{{ page.heading | default: page.title }}</h1>
+    <div class="prose prose--lead">
+      {{ content }}
+    </div>
+  </div>
+  {%- if page.photo %}
+  <img class="portrait" src="{{ page.photo | relative_url }}" alt="Portrait of {{ site.author.name }}" width="132" height="132">
+  {%- endif %}
+</section>
+
+<section class="section" aria-labelledby="experience">
+  <div class="label-row">
+    <h2 class="label" id="experience">Experience</h2>
+    <span class="mono-hint">git log --graph</span>
+  </div>
+  <ol class="commits" aria-label="Career history">
+    {%- for c in site.data.experience %}
+    <li class="commit commit--{{ c.graph }}{% if c.dashed %} commit--dashed{% endif %}">
+      <div class="commit__graph" aria-hidden="true">
+        {%- case c.graph -%}
+          {%- when "head" -%}<span class="g g-main g-main--below"></span>
+          {%- when "root" -%}<span class="g g-main g-main--above"></span>
+          {%- when "merge" -%}<span class="g g-main"></span><span class="g g-lane g-lane--below-merge"></span><svg class="g-curve" width="52" height="45" viewBox="0 0 52 45"><path d="M36 45 C36 34 12 38 12 28"/></svg>
+          {%- when "branch" or "pass" -%}<span class="g g-main"></span><span class="g g-lane"></span>
+          {%- when "tip" -%}<span class="g g-main"></span><span class="g g-lane g-lane--from-dot"></span>
+          {%- when "fork" -%}<span class="g g-main"></span><svg class="g-curve" width="52" height="29" viewBox="0 0 52 29"><path d="M36 0 C36 14 12 12 12 28"/></svg>
+          {%- else -%}<span class="g g-main"></span>
+        {%- endcase -%}
+        <span class="dot{% if c.graph == 'branch' or c.graph == 'tip' %} dot--lane{% endif %}"></span>
+      </div>
+      <div class="commit__body">
+        <span class="commit__main">
+          <span class="commit__ref"><code>{{ c.hash }}</code>{% if c.refs %}<span>{{ c.refs }}</span>{% endif %}</span>
+          <span class="commit__title">{{ c.title }}</span>
+          {%- if c.text %}<span class="commit__text">{{ c.text }}</span>{% endif %}
+        </span>
+        <span class="commit__years">{{ c.years }}</span>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+{%- if page.stack %}
+<section class="section" aria-labelledby="stack">
+  <h2 class="label" id="stack">What I work with</h2>
+  <dl class="stack">
+    {%- for group in page.stack %}
+    <div class="stack__row">
+      <dt>{{ group.title }}</dt>
+      <dd>{{ group.items }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+</section>
+{%- endif %}
+
+<section class="section section--last" aria-labelledby="contact">
+  <h2 class="label" id="contact">Get in touch</h2>
+  <p class="lead">{{ page.contact | default: "The easiest way to reach me is by email." }}</p>
+  <div class="inline-links">
+    <a class="accent" href="mailto:{{ site.data.social.email }}">Email →</a>
+    <a href="{{ site.data.social.linkedin }}">LinkedIn<span class="ext" aria-hidden="true">↗</span></a>
+    <a href="{{ site.data.social.github }}">GitHub<span class="ext" aria-hidden="true">↗</span></a>
+  </div>
+</section>

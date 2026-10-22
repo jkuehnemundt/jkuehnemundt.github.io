@@ -1,0 +1,26 @@
+# "On my desk" shelf on the home page. Order = left to right on the shelf.
+# color: spine colour (keep it dark enough for the light text on top).
+# height: spine height in px, vary it a little so it looks like a real shelf.
+# note: optional, one sentence on why you're reading or recommending it.
+- title: AI Agents with MCP
+  author: Kyle Stratis
+  publisher: O'Reilly
+  url: https://www.oreilly.com/library/view/ai-agents-with/9798341639546/
+  color: "#8A4A2E"
+  height: 250
+
+- title: Architecting for Scale
+  author: Lee Atchison
+  publisher: O'Reilly
+  subtitle: How to Maintain High Availability and Manage Risk in the Cloud
+  url: https://www.oreilly.com/library/view/-/9781492057161/
+  color: "#58623A"
+  height: 284
+
+- title: Building Resilient Distributed Systems
+  author: Sam Newman
+  publisher: O'Reilly
+  subtitle: Patterns and Practices for Stable Software
+  url: https://samnewman.io/books/building-resilient-distributed-systems/
+  color: "#7E5F2E"
+  height: 312

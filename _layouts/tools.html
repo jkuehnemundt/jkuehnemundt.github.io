@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="page-intro">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+</section>
+
+<div class="filter" role="group" aria-label="Filter by platform" data-tool-filter hidden>
+  <button type="button" data-os="all" aria-pressed="true">All</button>
+  <button type="button" data-os="windows" aria-pressed="false">Windows</button>
+  <button type="button" data-os="macos" aria-pressed="false">macOS</button>
+</div>
+
+{%- for group in site.data.tools %}
+<section class="section tool-group" data-tool-group>
+  <h2 class="label">{{ group.group }}</h2>
+  <ul class="rows">
+    {%- for tool in group.items %}
+    <li class="row" data-os="{{ tool.os }}">
+      <a class="row__link" href="{{ tool.url }}">
+        <span class="row__main">
+          <span class="row__title">{{ tool.name }}<span class="ext" aria-hidden="true">↗</span></span>
+          <span class="row__text">{{ tool.desc }}</span>
+        </span>
+        <span class="row__meta">{% case tool.os %}{% when "both" %}Windows · macOS{% when "windows" %}Windows{% else %}macOS{% endcase %}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endfor %}
+<div class="section--last"></div>

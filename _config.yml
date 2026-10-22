@@ -1,90 +1,74 @@
-# Site settings
-title: Jannik Kühnemundt # site title
-description: >- # site description
-  Personal blog of a Software Engineer — sharing insights and experiences in software development and tech.
-lang: en-US # default lang
-timezone: Europe/Berlin # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
-mode: light # default theme "dark" | "light"
+title: Jannik Kühnemundt
+tagline: Notes from my desk.
+description: Software development, side projects and the problems I run into along the way.
+url: "https://www.kuehnemundt.com"
+baseurl: ""
+lang: en
 
-# Profile settings
+# Set to true once there are enough notes to group by topic.
+show_topics: false
+# Set to true once the first notes are published.
+show_notes: true
+# One line on the home page about what you're working on. Leave empty to hide.
+# Planned note titles go in _data/upcoming.yml instead and replace this line.
+up_next: "Currently tinkering with AI agents and MCP servers. Notes will follow."
+timezone: Europe/Berlin
+
+twitter:
+  card: summary_large_image
+
 author:
-  name: Jannik Kühnemundt # author name
-  bio: >- # tell to the world
-    Hi, I'm a Software Engineer at <b><a href="https://www.triovega.com" target="_blank" rel="noopener">TRIOVEGA GmbH</a></b>. This is my personal blog, where I share insights, experiences, and thoughts on software development and technology.
-  username: username # general username
-  github: github_username # github username
-  twitter: twitter_username # twitter username
-  facebook: facebook_username # facebook username
-  email: jkuehnemundt@gmail.com # email adress
-  avatar: /assets/img/avatar.jpg # change with your own avatar
+  name: Jannik Kühnemundt
+  url: https://www.kuehnemundt.com/about/
+  role: Senior software engineer · C#/.NET · Lübeck
 
-# URL settings
-url: "https://kuehnemundt.com" #
-baseurl:
+# Keeps old URLs working, e.g. /comments-in-code/
 permalink: /:title/
-google_analytics: # leave it blank if not wish
-fb_appid:
 
-# Collection setting
-collections:
-  posts:
-    output: true
-
-# Markdown settings
 markdown: kramdown
-highlighter: rouge
 kramdown:
+  input: GFM
   syntax_highlighter: rouge
+  hard_wrap: false
 
-# Default front matter
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Tells search engines that these profiles belong to the same person (schema.org sameAs)
+social:
+  name: Jannik Kühnemundt
+  links:
+    - https://github.com/jkuehnemundt
+    - https://linkedin.com/in/kuehnemundt
+
+# Paste the code from Google Search Console here (Settings → Ownership verification → HTML tag)
+# google_site_verification: "..."
+
+feed:
+  path: feed.xml
+
 defaults:
   - scope:
       path: ""
+      type: posts
     values:
       layout: post
-      comments: false
-
-# Jekyll Compose default front matter
-jekyll_compose:
-  post_default_front_matter:
-    modified:
-    tags: []
-    description:
-  draft_default_front_matter:
-    modified:
-    tags: []
-    description:
-
-# Homepage limit posts
-number_of_posts: 5
-
-# Build settings
-# theme: klise
-sass:
-  style: compressed
-
-include:
-  - _redirects
-  - .htaccess
+      nav: Notes
+  - scope:
+      path: ""
+    values:
+      layout: page
+      # Preview image for LinkedIn, Slack, etc. (jekyll-seo-tag)
+      image: /assets/img/og-image.png
 
 exclude:
-  - CNAME
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - LICENSE
-  - CHANGELOG.md
-  - README.md
-  - node_modules
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - lighthouse.png
-  - klise-*.gem
-  - klise.gemspec
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-postfiles
+  - scripts/
+  - vendor/
+  - node_modules/
+  - .obsidian/

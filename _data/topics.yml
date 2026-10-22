@@ -1,0 +1,13 @@
+# id is what you put into a note's front matter: topics: [dotnet, architecture]
+- id: dotnet
+  name: .NET
+- id: architecture
+  name: Architecture & patterns
+- id: clean-code
+  name: Clean code
+- id: homelab
+  name: Homelab
+- id: ai
+  name: AI & MCP
+- id: security
+  name: Security

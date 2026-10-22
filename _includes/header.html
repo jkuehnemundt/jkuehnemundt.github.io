@@ -1,174 +1,27 @@
-<head prefix="og: http://ogp.me/ns#">
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="application-name" content="{{ site.title }}" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
-  <meta name="apple-mobile-web-app-title" content="{{ site.title }}" />
-  <title>
-    {% if page.title %}{{ page.title | escape }} - {{ site.title }}{% else %}{{
-    site.title | escape }}{% endif %}
-  </title>
-  <link
-    rel="alternate"
-    href="{{
-      page.url | remove: 'index.html' | remove: '.html' | absolute_url
-    }}"
-    hreflang="{{ site.lang }}"
-  />
-  <link
-    rel="canonical"
-    href="{{
-      page.url  | remove: 'index.html' | remove: '.html' | absolute_url
-    }}"
-  />
-  {% if paginator.previous_page %}
-  <link
-    rel="prev"
-    href="{{
-      paginator.previous_page_path
-        | remove: 'index.html'
-        | remove: '.html'
-    }}"
-  />
-  {% endif %} {% if paginator.next_page %}
-  <link
-    rel="next"
-    href="{{
-      paginator.next_page_path
-        | remove: 'index.html'
-        | remove: '.html'
-    }}"
-  />
-  {% endif %}
-  <meta
-    name="description"
-    content="{{
-      page.description
-        | default: site.description
-        | strip_html
-        | normalize_whitespace
-        | truncate: 200
-        | escape
-    }}"
-  />
-  <meta name="referrer" content="no-referrer-when-downgrade" />
-  <meta property="fb:app_id" content="{{ site.fb_appid }}" />
-  <meta
-    property="og:site_name"
-    content="{% if page.title %}{{ page.title | escape }} | {{
-      site.author.name
-    }}{% else %}{{ site.title | escape }}{% endif %}"
-  />
-  <meta
-    property="og:title"
-    content="{% if page.title %}{{ page.title | escape }} | {{
-      site.author.name
-    }}{% else %}{{ site.title | escape }}{% endif %}"
-  />
-  {% if page.location %}
-  <meta property="og:type" content="article" />
-  <meta
-    property="article:publisher"
-    content="https://web.facebook.com/{{ site.author.facebook }}"
-  />
-  {% else %}
-  <meta property="og:type" content="website" />
-  {% endif %}
-  <meta
-    property="og:url"
-    content="{{
-      page.url | remove: 'index.html' | remove: '.html' | absolute_url
-    }}"
-  />
-  <meta
-    property="og:description"
-    content="{{
-      page.description
-        | default: site.description
-        | strip_html
-        | normalize_whitespace
-        | truncate: 200
-        | escape
-    }}"
-  />
-  {% if page.image %}
-  <meta property="og:image" content="{{ page.image | absolute_url }}" />
-  {% else %}
-  <meta property="og:image" content="{{ site.image | absolute_url }}" />
-  {% endif %}
-  <meta property="og:image:width" content="640" />
-  <meta property="og:image:height" content="640" />
-  <meta name="twitter:card" content="summary" />
-  <meta
-    name="twitter:title"
-    content="{% if page.title %}{{ page.title | escape }} | {{
-      site.author.twitter
-    }}{% else %}{{ site.title | escape }}{% endif %}"
-  />
-  <meta
-    name="twitter:url"
-    content="{{
-      page.url  | remove: 'index.html' | remove: '.html' | absolute_url
-    }}"
-  />
-  <meta name="twitter:site" content="@{{ site.author.twitter }}" />
-  <meta name="twitter:creator" content="@{{ site.author.twitter }}" />
-  <meta
-    name="twitter:description"
-    content="{{
-      page.description
-        | default: site.description
-        | strip_html
-        | normalize_whitespace
-        | truncate: 200
-        | escape
-    }}"
-  />
-  {% if page.image %}
-  <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
-  {% else %}
-  <meta name="twitter:image" content="{{ site.image | absolute_url }}" />
-  {% endif %} {% feed_meta %}
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="/assets/favicons/apple-touch-icon.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="/assets/favicons/favicon-32x32.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="/assets/favicons/favicon-16x16.png"
-  />
-  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
-  <link
-    rel="mask-icon"
-    href="/assets/favicons/safari-pinned-tab.svg"
-    color="#5bbad5"
-  />
-  <meta name="apple-mobile-web-app-title" content="Jekyll Klise" />
-  <meta name="application-name" content="Jekyll Klise" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#2c2c2c" />
-
-  <link rel="stylesheet" href="/assets/css/style.css" />
-
-  <!-- for mathjax support -->
-  {% if page.usemathjax %}
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-      TeX: { equationNumbers: { autoNumber: "AMS" } }
-      });
-    </script>
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  {% endif %}
-</head>
+<header class="site-header">
+  <a class="site-name" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} – Home">
+    {%- assign name_parts = site.author.name | split: " " -%}
+    {%- for part in name_parts -%}
+      <span class="site-name__initial" aria-hidden="true">{{ part | slice: 0 }}</span><span class="site-name__rest" aria-hidden="true">{{ part | slice: 1, 50 }}{% unless forloop.last %} {% endunless %}</span>
+    {%- endfor -%}
+  </a>
+  <div class="site-header__right">
+    <nav class="site-nav" aria-label="Main">
+      {%- assign nav = "" -%}
+      {%- if site.show_notes -%}{%- assign nav = nav | append: "Notes|/notes/," -%}{%- endif -%}
+      {%- if site.show_topics -%}{%- assign nav = nav | append: "Topics|/topics/," -%}{%- endif -%}
+      {%- assign nav = nav | append: "About|/about/,Tools|/tools/" | split: "," -%}
+      {%- for entry in nav -%}
+        {%- assign parts = entry | split: "|" -%}
+        {%- assign href = parts[1] -%}
+        {%- assign current = false -%}
+        {%- if page.url == href or page.nav == parts[0] -%}{%- assign current = true -%}{%- endif -%}
+        <a href="{{ href | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ parts[0] }}</a>
+      {%- endfor -%}
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" data-theme-toggle>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>

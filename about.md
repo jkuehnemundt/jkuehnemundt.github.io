@@ -1,16 +1,27 @@
 ---
+layout: about
 title: About
+heading: Hi, I'm Jannik.
 permalink: /about/
-layout: page
-excerpt: Hello peeps, I'm student of computer science from Banyuwangi, living in Jogjakarta. This blog for documentation about my programming journey, running on jekyll, hosting on netlify and using my own simple theme.
-comments: false
+photo: /assets/img/portrait.jpg
+stack:
+  - title: Languages
+    items: "C#, .NET, .NET Framework"
+  - title: Data
+    items: "Microsoft SQL Server, MySQL, SQLite"
+  - title: Practices
+    items: "Software architecture, design patterns, Domain-Driven Design, Test-Driven Development with xUnit"
+  - title: Delivery
+    items: "CI/CD, Docker"
+  - title: Security
+    items: "Penetration testing, CTFs on Hack The Box, Hack The Box Academy"
+  - title: Side projects
+    items: "Claude, AI agents, MCP servers, Proxmox"
+contact: The easiest way to reach me is by email. I'm always happy to talk about software, architecture or an interesting problem.
+description: "Jannik Kühnemundt, senior software engineer in Lübeck: C#/.NET, software architecture, career and contact."
 ---
-_"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."_
+I'm a senior software engineer with fifteen years in software development, currently working in the C#/.NET ecosystem at TRIOVEGA GmbH.
 
-Hi, my name is Jannik. I started my journey in software development with a vocational training as an IT specialist in application development, followed by a degree in computer science. I've been developing software for about 20 years now and currently work in the C#/.NET ecosystem at TRIOVEGA GmbH.
+I started with an apprenticeship in software development and later studied computer science. What I care about most is software that stays understandable and maintainable long after it ships, and teams that make good technical decisions together.
 
-I'm a passionate IT enthusiast with a deep curiosity for everything related to computer science — there's no area in tech that doesn't spark my interest. In my free time, I enjoy diving into cybersecurity topics and solving Capture the Flag challenges on platforms like TryHackMe and HackTheBox.
-
-I also like exploring new technologies and concepts, and often find myself reading technical books on a variety of topics. Staying curious and learning something new is a big part of what keeps me motivated.
-
-I enjoy working in a team environment and strongly value clean, maintainable code. Writing software that is not only functional but also elegant and easy to understand is something I care deeply about.
+Outside of work I solve Capture the Flag challenges, build side projects and read more technical books than I finish. This blog is where I write down what I run into along the way.

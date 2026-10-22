@@ -1,0 +1,12 @@
+{%- comment -%} Usage: {% include note-row.html post=post %} {%- endcomment -%}
+<li class="row">
+  <a class="row__link" href="{{ include.post.url | relative_url }}">
+    <span class="row__main">
+      <span class="row__title">{{ include.post.title }}</span>
+      {%- if include.post.description and include.compact != true %}
+      <span class="row__text">{{ include.post.description }}</span>
+      {%- endif %}
+    </span>
+    <time class="row__meta" datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%b %Y" }}</time>
+  </a>
+</li>
