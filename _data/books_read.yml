@@ -27,3 +27,12 @@
   color: "#3E5451"
   height: 320
   # note: add a line or two in your own words.
+
+- title: C# 14 and .NET 10
+  author: Mark J. Price
+  publisher: Packt
+  subtitle: Modern Cross-Platform Development Fundamentals
+  url: https://www.oreilly.com/library/view/-/9781836206637/
+  color: "#5B4A6E"
+  height: 328
+  # note: add a line or two in your own words.
