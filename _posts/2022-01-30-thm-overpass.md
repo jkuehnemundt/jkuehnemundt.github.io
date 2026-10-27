@@ -29,7 +29,11 @@ PORT   STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.67 seconds
 ```
 
-Two open ports: SSH and HTTP. The website on port 80 is a landing page for the password manager with a couple of static subpages, but no login anywhere in sight. So I run `dirsearch` to look for hidden paths.
+Two open ports: SSH and HTTP. The website on port 80 is a landing page for the password manager — "military grade cryptography", no less — with a couple of static subpages, but no login anywhere in sight.
+
+![The Overpass landing page, advertising a password manager with military grade encryption.](/assets/img/overpass/landing.png)
+
+So I run `dirsearch` to look for hidden paths.
 
 ```console
 target: http://10.10.xx.xx/
@@ -43,9 +47,13 @@ target: http://10.10.xx.xx/
 
 There's an `/admin/` directory with a login page. The room gives a hint: this is an OWASP Top 10 vulnerability, and explicitly _do not bruteforce_.
 
+![The Overpass administrator login form.](/assets/img/overpass/admin-login.png)
+
 ## Bypassing the login
 
-Instead of attacking the form, I open the browser console and read `login.js`. The `login` function posts the credentials to `/api/login` and then decides what to do with the response:
+Instead of attacking the form, I open the browser dev tools and read `login.js`. The `login` function posts the credentials to `/api/login` and then decides what to do with the response:
+
+![The login.js source in the debugger, with the Cookies.set call that stores the session token highlighted.](/assets/img/overpass/login-js.png)
 
 ```javascript
 async function login() {
@@ -74,7 +82,9 @@ So I skip the form completely and set the cookie myself in the console:
 Cookies.set("SessionToken", "")
 ```
 
-After a reload, the admin page renders and hands over a private RSA key. I save it as `id_rsa`.
+After a reload, the admin page renders and hands over a private RSA key — along with a note from "Paradox" telling James to crack it himself next time. I save it as `id_rsa`.
+
+![The admin area showing a note to James and an encrypted RSA private key.](/assets/img/overpass/rsa-key.png)
 
 ## Cracking the private key
 
