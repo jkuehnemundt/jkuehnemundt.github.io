@@ -58,9 +58,9 @@ layout: default
         {%- for l in group.links %}
         <a class="stack__stats" href="{{ l.url }}">{{ l.label }}<span class="ext" aria-hidden="true">↗</span></a>
         {%- endfor %}
-        {%- if group.stats == "tryhackme" and site.data.tryhackme.updated != "" %}
+        {%- if group.stats == "tryhackme" %}
         {%- assign thm = site.data.tryhackme %}
-        <a class="stack__stats" href="{{ thm.profile }}">TryHackMe{% if thm.top_percent != "" %} · Top {{ thm.top_percent }} %{% endif %}{% if thm.rooms != "" %} · {{ thm.rooms }} rooms{% endif %}{% if thm.level != "" %} · Level {{ thm.level }}{% endif %}<span class="ext" aria-hidden="true">↗</span></a>
+        <a class="stack__stats" href="{{ thm.profile }}">TryHackMe{% if thm.updated == "" %} · Learning paths and CTF rooms{% endif %}{% if thm.top_percent != "" %} · Top {{ thm.top_percent }} %{% endif %}{% if thm.rooms != "" %} · {{ thm.rooms }} rooms{% endif %}{% if thm.level != "" %} · Level {{ thm.level }}{% endif %}<span class="ext" aria-hidden="true">↗</span></a>
         {%- endif %}
       </dd>
     </div>

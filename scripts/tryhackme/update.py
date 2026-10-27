@@ -52,7 +52,7 @@ def to_yaml(username, d):
     }
     lines = [
         "# Filled automatically by scripts/tryhackme/update.py (runs weekly in the homelab).",
-        '# As long as "updated" is empty, nothing is shown on /about/.',
+        '# As long as "updated" is empty, /about/ shows a plain profile link without numbers.',
         f'username: "{username}"',
         f'profile: "https://tryhackme.com/p/{username}"',
         f'updated: "{datetime.date.today().isoformat()}"',

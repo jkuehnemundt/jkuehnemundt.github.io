@@ -2,7 +2,7 @@
 
 TryHackMe blockt Anfragen aus Rechenzentren (also auch GitHub Actions). Deshalb holt ein kleiner Job im Homelab die Werte einmal pro Woche ab und schreibt sie per GitHub-API nach `_data/tryhackme.yml`. Der Commit löst den normalen Pages-Build aus. Ändert sich nichts, wird auch nichts committet.
 
-Solange `updated` in `_data/tryhackme.yml` leer ist, zeigt die About-Seite keine Statistik an.
+Solange `updated` in `_data/tryhackme.yml` leer ist, zeigt die About-Seite nur den Link zum Profil ohne Zahlen.
 
 ## Einrichtung (Debian/Ubuntu-LXC auf Proxmox)
 

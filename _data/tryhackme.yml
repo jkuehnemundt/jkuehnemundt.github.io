@@ -1,5 +1,5 @@
 # Filled automatically by scripts/tryhackme/update.py (runs weekly in the homelab).
-# As long as "updated" is empty, nothing is shown on /about/.
+# As long as "updated" is empty, /about/ shows a plain profile link without numbers.
 username: "1ntrusvsVatic4n1.0x7"
 profile: "https://tryhackme.com/p/1ntrusvsVatic4n1.0x7"
 updated: ""
