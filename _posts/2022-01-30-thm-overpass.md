@@ -14,7 +14,7 @@ A walkthrough of the retired TryHackMe room [Overpass](https://tryhackme.com/roo
 
 ## Recon
 
-First I want to see what's running on the box, so I start with an Nmap scan.
+First I want to see what's running on the box, so I start with a quick Nmap scan.
 
 ```console
 kali@kali:~$ nmap 10.10.xx.xx
