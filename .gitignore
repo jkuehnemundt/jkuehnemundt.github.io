@@ -5,4 +5,5 @@ _site/
 _drafts
 klise-*.gem
 Gemfile.lock
-vendor/__pycache__/
+vendor/
+__pycache__/
