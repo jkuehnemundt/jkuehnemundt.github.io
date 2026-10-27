@@ -15,6 +15,7 @@ stack:
     items: "CI/CD, Docker"
   - title: Security
     items: "Penetration testing, CTFs on Hack The Box, Hack The Box Academy"
+    stats: tryhackme
   - title: Side projects
     items: "Claude, AI agents, MCP servers, Proxmox"
 contact: The easiest way to reach me is by email. I'm always happy to talk about software, architecture or an interesting problem.

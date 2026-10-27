@@ -1,0 +1,9 @@
+[Unit]
+Description=Update TryHackMe stats on kuehnemundt.com
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/tryhackme-stats.env
+ExecStart=/opt/tryhackme-stats/venv/bin/python /opt/tryhackme-stats/update.py
