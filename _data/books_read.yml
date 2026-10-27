@@ -9,3 +9,21 @@
   color: "#3F4A52"
   height: 268
   note: "The book that shaped how I think about readable code. I keep coming back to its argument that a comment is often a sign the code itself should be clearer — it's where my 'Comments in Code' note started."
+
+- title: Head First Design Patterns
+  author: Eric Freeman & Elisabeth Robson
+  publisher: O'Reilly
+  subtitle: Building Extensible and Maintainable Object-Oriented Software
+  url: https://www.oreilly.com/library/view/-/9781492077992/
+  color: "#7A4A3A"
+  height: 300
+  # note: add a line or two in your own words.
+
+- title: Designing Data-Intensive Applications
+  author: Martin Kleppmann
+  publisher: O'Reilly
+  subtitle: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems
+  url: https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/
+  color: "#3E5451"
+  height: 320
+  # note: add a line or two in your own words.
