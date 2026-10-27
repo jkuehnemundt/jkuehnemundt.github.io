@@ -189,6 +189,8 @@ img { max-width: 100%; height: auto; }
 .stack__row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid var(--border); }
 .stack__row dt { flex: 0 0 140px; font-size: 14px; color: var(--text-3); }
 .stack__row dd { flex: 1 1 360px; min-width: 0; margin: 0; font-size: 17px; line-height: 1.5; }
+.stack__stats { display: block; margin-top: 6px; font-family: var(--mono); font-size: 13px; color: var(--text-3); text-decoration: none; }
+.stack__stats:hover, .stack__stats:focus-visible { color: var(--accent); }
 
 /* git graph */
 .commits { list-style: none; margin: 0; padding: 0; }
