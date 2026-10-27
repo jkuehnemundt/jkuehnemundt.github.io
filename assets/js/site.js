@@ -135,4 +135,20 @@
     nameLink.addEventListener('focus', function () { go(total, true); });
     nameLink.addEventListener('blur', function () { go(0, false); });
   }
+
+  // ---------- Console greeting ----------
+  // A small hello for anyone who opens the dev tools.
+  try {
+    console.log(
+      '%c JK %c  Poking around in here? Good instinct.',
+      'background:#E08A5E;color:#1D1916;font-weight:700;padding:2px 7px;border-radius:3px',
+      'color:#E08A5E;font-weight:600'
+    );
+    console.log(
+      '%cHand-built Jekyll · no trackers · fonts served from this domain.\n' +
+      'If you like taking things apart, you might like working together: %cgithub.com/jkuehnemundt',
+      'color:#A39688',
+      'color:#A39688;text-decoration:underline'
+    );
+  } catch (e) {}
 })();
