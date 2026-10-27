@@ -1,0 +1,11 @@
+# "Read" shelf on the home page. Same format as books.yml.
+# note: one or two sentences on what the book gave you. This is your voice,
+# so edit it to sound like you.
+- title: Clean Code
+  author: Robert C. Martin
+  publisher: Prentice Hall
+  subtitle: A Handbook of Agile Software Craftsmanship
+  url: https://www.oreilly.com/library/view/clean-code-a/9780136083238/
+  color: "#3F4A52"
+  height: 268
+  note: "The book that shaped how I think about readable code. I keep coming back to its argument that a comment is often a sign the code itself should be clearer — it's where my 'Comments in Code' note started."

@@ -72,6 +72,32 @@ layout: default
 </section>
 {%- endif %}
 
+{%- if site.data.books_read.size > 0 %}
+<section class="section" aria-labelledby="read" data-shelf>
+  <h2 class="label" id="read">Read</h2>
+  <p class="shelf-hint">Books that stuck with me. Pick one for details.</p>
+  <div class="shelf" role="group" aria-label="Books I've read">
+    {%- for book in site.data.books_read %}
+    <button class="spine" type="button" data-book="{{ forloop.index0 }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="{{ book.title }} by {{ book.author }}"
+            style="--spine: {{ book.color | default: '#7E5F2E' }}; --h: {{ book.height | default: 280 }}px">
+      <span class="spine__title">{{ book.title }}</span>
+      <span class="spine__author">{{ book.author | split: " " | last }}</span>
+    </button>
+    {%- endfor %}
+  </div>
+  {%- for book in site.data.books_read %}
+  <div class="book-detail" data-book-detail="{{ forloop.index0 }}" aria-live="polite"{% unless forloop.first %} hidden{% endunless %}>
+    <span class="book-detail__title">{{ book.title }}</span>
+    <span class="book-detail__meta">{{ book.author }}{% if book.publisher %} · {{ book.publisher }}{% endif %}</span>
+    {%- if book.subtitle %}<span class="book-detail__text">{{ book.subtitle }}</span>{% endif %}
+    {%- if book.note %}<span class="book-detail__text">{{ book.note }}</span>{% endif %}
+    {%- if book.url %}<a class="more" href="{{ book.url }}">View at the publisher<span class="ext" aria-hidden="true">↗</span></a>{% endif %}
+  </div>
+  {%- endfor %}
+</section>
+{%- endif %}
+
 {%- if site.show_topics %}
 <section class="section section--last" aria-labelledby="topics">
   <h2 class="label" id="topics">Topics</h2>

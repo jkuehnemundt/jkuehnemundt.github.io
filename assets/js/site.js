@@ -81,8 +81,8 @@
   }
 
   // ---------- Bookshelf ----------
-  var shelf = document.querySelector('[data-shelf]');
-  if (shelf) {
+  // Each shelf is self-contained, so ids only have to be unique within one shelf.
+  document.querySelectorAll('[data-shelf]').forEach(function (shelf) {
     var spines = shelf.querySelectorAll('[data-book]');
     var details = shelf.querySelectorAll('[data-book-detail]');
     spines.forEach(function (spine) {
@@ -92,7 +92,7 @@
         details.forEach(function (d) { d.hidden = d.dataset.bookDetail !== id; });
       });
     });
-  }
+  });
 
   // ---------- Name: JK types itself out on hover ----------
   var nameLink = document.querySelector('.site-name');
