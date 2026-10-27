@@ -18,5 +18,5 @@
 <link rel="icon" href="{{ '/assets/img/icon-512.png' | relative_url }}" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
 <link rel="preload" href="{{ '/assets/fonts/instrument-sans-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
